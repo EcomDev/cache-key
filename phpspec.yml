@@ -1,0 +1,9 @@
+suites:
+  default:
+    namespace: EcomDev\CacheKey
+    psr4_prefix: EcomDev\CacheKey
+    src_path: %paths.config%/src
+    spec_path: %paths.config%
+formatter.name: nyan.cat
+extensions:
+  - PhpSpec\NyanFormattersExtension\Extension
