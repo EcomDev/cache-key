@@ -2,9 +2,7 @@
 
 namespace EcomDev\CacheKey\Normalizer;
 
-
 use EcomDev\CacheKey\NormalizerInterface;
-
 
 /**
  * PSR-6 Normalizer
@@ -38,8 +36,8 @@ class Psr6Normalizer implements NormalizerInterface
     public function __construct(
         EncodeNormalizer $encodeNormalizer,
         LengthNormalizer $lengthNormalizer
-    )
-    {
+    ) {
+    
         $this->encodeNormalizer = $encodeNormalizer;
         $this->lengthNormalizer = $lengthNormalizer;
     }
@@ -58,6 +56,7 @@ class Psr6Normalizer implements NormalizerInterface
      * Normalizes key according to PSR-6 specification
      *
      * @param string $key
+     *
      * @return string
      */
     public function normalize($key)
@@ -66,5 +65,4 @@ class Psr6Normalizer implements NormalizerInterface
             $this->encodeNormalizer->normalize($key)
         );
     }
-
 }
