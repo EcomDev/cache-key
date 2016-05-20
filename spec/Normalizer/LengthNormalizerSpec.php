@@ -2,6 +2,7 @@
 
 namespace spec\EcomDev\CacheKey\Normalizer;
 
+use EcomDev\CacheKey\NormalizerInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -9,7 +10,7 @@ class LengthNormalizerSpec extends ObjectBehavior
 {
     function it_implements_normalizer_interface()
     {
-        $this->shouldHaveType('EcomDev\CacheKey\NormalizerInterface');
+        $this->shouldHaveType(NormalizerInterface::class);
     }
 
     function it_is_possible_to_specify_custom_max_length()
