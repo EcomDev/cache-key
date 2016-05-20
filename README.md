@@ -91,6 +91,23 @@ $generator = new Generator(
 $generator->generate($object); // Generates "some-key_some-value_another-key_another-value"
 ```
 
+### PSR-6 compatible key generation
+```php
+use EcomDev\CacheKey\Normalizer\Psr6Normalizer;
+use EcomDev\CacheKey\Generator;
+
+$generator = new Generator(Psr6Normalizer::create());
+$generator->generate('give_me-psr-6-compatible_#^.;:/\\-key'); // Generates "give_me-psr-6-compatible_235e.3b3a2f5c-key"
+```
+
+### Prefixed Key Generation
+```php
+use EcomDev\CacheKey\Normalizer\Psr6Normalizer;
+use EcomDev\CacheKey\Generator;
+
+$generator = new Generator(Psr6Normalizer::create(), null, 'prefix-');
+$generator->generate('some-non-prefixed-key'); // Generates "prefix-some-non-prefixed-key"
+```
 
 ## Contribution
 Make a pull request based on develop branch
